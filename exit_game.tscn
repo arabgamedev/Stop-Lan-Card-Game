@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/theme1.tres" type="Theme" id=1]
+[ext_resource path="res://exit_game.gd" type="Script" id=2]
+
+[node name="exit_game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Control" parent="."]
+margin_right = 368.0
+margin_bottom = 385.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -200.0
+margin_right = 315.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 630, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -295.0
+margin_top = -132.0
+margin_right = 295.0
+margin_bottom = 132.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/vbox"]
+margin_top = -1.0
+margin_right = 590.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 170 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "you want to exit
+are you sure?"
+align = 1
+
+[node name="hbox" type="HBoxContainer" parent="Panel/vbox"]
+margin_top = 174.0
+margin_right = 590.0
+margin_bottom = 264.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="yes_btn" type="Button" parent="Panel/vbox/hbox"]
+margin_left = 40.0
+margin_right = 240.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 200, 90 )
+text = "yes"
+
+[node name="cancel_btn" type="Button" parent="Panel/vbox/hbox"]
+margin_left = 250.0
+margin_right = 550.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 300, 90 )
+text = "cancel"
+[connection signal="pressed" from="Panel/vbox/hbox/yes_btn" to="." method="_on_yes_btn_pressed"]
+[connection signal="pressed" from="Panel/vbox/hbox/cancel_btn" to="." method="_on_cancel_btn_pressed"]

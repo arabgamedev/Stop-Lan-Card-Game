@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/fonts/dynamicfont1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/theme1.tres" type="Theme" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://nickname.tscn" type="PackedScene" id=4]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.207843, 0.647059, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="vbox"]
+margin_right = 720.0
+margin_bottom = 976.0
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.960784, 0.0509804, 0.541176, 1 )
+text = "STOP!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="CenterContainer" parent="vbox"]
+margin_top = 980.0
+margin_right = 720.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 0, 300 )
+
+[node name="vbox" type="VBoxContainer" parent="vbox/center"]
+margin_left = 210.0
+margin_top = 21.0
+margin_right = 510.0
+margin_bottom = 279.0
+
+[node name="play" type="Button" parent="vbox/center/vbox"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+text = "Play"
+
+[node name="Name" type="Button" parent="vbox/center/vbox"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 300, 100 )
+text = "Name"
+
+[node name="MarginContainer" type="MarginContainer" parent="vbox/center/vbox"]
+margin_top = 208.0
+margin_right = 300.0
+margin_bottom = 258.0
+custom_constants/margin_top = 50
+
+[node name="nickname" parent="." instance=ExtResource( 4 )]
+[connection signal="pressed" from="vbox/center/vbox/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="vbox/center/vbox/Name" to="." method="_on_Name_pressed"]

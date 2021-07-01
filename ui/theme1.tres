@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://ui/fonts/dynamicfont_btn1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/styleboxflat_btn_pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://ui/styleboxflat_btn_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ui/styleboxflat_lineedit_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://ui/styleboxflat_panel.tres" type="StyleBox" id=5]
+[ext_resource path="res://ui/styleboxflat_btn_disabled.tres" type="StyleBox" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[resource]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.4 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0.662745, 1, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = ExtResource( 6 )
+Button/styles/focus = null
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 3 )
+Button/styles/pressed = ExtResource( 2 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = ExtResource( 1 )
+Label/styles/normal = null
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.964706, 0.996078, 0, 1 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_selected = Color( 1, 0.0117647, 0.0117647, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0, 1, 0.976471, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = ExtResource( 1 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource( 1 )
+LineEdit/styles/normal = ExtResource( 4 )
+LineEdit/styles/read_only = null
+Panel/styles/panel = ExtResource( 5 )

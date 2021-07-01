@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/theme1.tres" type="Theme" id=1]
+[ext_resource path="res://lan_lobby.gd" type="Script" id=2]
+[ext_resource path="res://Server_sender.gd" type="Script" id=3]
+
+[node name="lan_lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.207843, 0.647059, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="players" type="Label" parent="vbox"]
+margin_right = 720.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "players (1)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="vbox" type="VBoxContainer" parent="vbox"]
+margin_top = 124.0
+margin_right = 720.0
+margin_bottom = 1032.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="note" type="Label" parent="vbox"]
+margin_top = 1036.0
+margin_right = 720.0
+margin_bottom = 1156.0
+rect_min_size = Vector2( 0, 120 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "players must be 3-8"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="hbox" type="HBoxContainer" parent="vbox"]
+margin_top = 1160.0
+margin_right = 720.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 0, 120 )
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start_btn" type="Button" parent="vbox/hbox"]
+margin_left = 55.0
+margin_right = 355.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_vertical = 0
+text = "Start"
+
+[node name="back_btn" type="Button" parent="vbox/hbox"]
+margin_left = 365.0
+margin_right = 665.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_vertical = 0
+text = "back"
+
+[node name="Server_sender" type="Node" parent="."]
+script = ExtResource( 3 )
+[connection signal="pressed" from="vbox/hbox/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="vbox/hbox/back_btn" to="." method="_on_back_btn_pressed"]

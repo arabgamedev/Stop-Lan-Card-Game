@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/theme1.tres" type="Theme" id=1]
+[ext_resource path="res://name_box.gd" type="Script" id=2]
+
+[node name="name_box" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 90 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "player"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

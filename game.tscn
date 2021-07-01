@@ -1,0 +1,223 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/theme1.tres" type="Theme" id=2]
+[ext_resource path="res://game.gd" type="Script" id=3]
+[ext_resource path="res://exit_game.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/fonts/SHOWG.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "begining"
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 5 )
+
+[node name="game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.207843, 0.647059, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="base" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base"]
+anims/begining = SubResource( 1 )
+
+[node name="card4" parent="base" instance=ExtResource( 1 )]
+margin_left = -146.007
+margin_top = -464.663
+margin_right = 157.993
+margin_bottom = -60.6626
+rect_rotation = -2.95651
+rect_pivot_offset = Vector2( 166.559, 147.557 )
+
+[node name="card0" parent="base" instance=ExtResource( 1 )]
+margin_left = -311.714
+margin_top = -215.588
+margin_right = -7.7139
+margin_bottom = 188.412
+rect_rotation = 4.18554
+rect_pivot_offset = Vector2( 162.408, 204.864 )
+
+[node name="card1" parent="base" instance=ExtResource( 1 )]
+margin_left = 45.2813
+margin_top = -199.515
+margin_right = 349.281
+margin_bottom = 204.485
+rect_rotation = -4.36162
+rect_pivot_offset = Vector2( 157.772, 200.537 )
+
+[node name="card2" parent="base" instance=ExtResource( 1 )]
+margin_left = 42.963
+margin_top = 79.2806
+margin_right = 346.963
+margin_bottom = 483.281
+rect_rotation = 2.74079
+rect_pivot_offset = Vector2( 151.281, 194.819 )
+
+[node name="card3" parent="base" instance=ExtResource( 1 )]
+margin_left = -287.296
+margin_top = 79.2807
+margin_right = 16.704
+margin_bottom = 483.281
+rect_rotation = -4.23811
+rect_pivot_offset = Vector2( 152.672, 194.819 )
+
+[node name="nickname" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -360.0
+margin_top = 120.0
+margin_right = 360.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "nickname"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1091.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="give_it" type="Label" parent="vbox"]
+margin_right = 720.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Give it to 0000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="CenterContainer" parent="vbox"]
+margin_top = 69.0
+margin_right = 720.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 0, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="give_btn" type="Button" parent="vbox/center"]
+margin_left = 210.0
+margin_top = 15.0
+margin_right = 510.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 300, 90 )
+size_flags_horizontal = 0
+text = "give"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="winner" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="winner"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -102.5
+margin_bottom = 102.5
+rect_min_size = Vector2( 0, 250 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="Label" parent="winner/vbox"]
+margin_right = 720.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "you win!
+win"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="winner/vbox/win"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 16.0
+margin_bottom = 106.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stop_btn" type="Button" parent="hbox"]
+margin_left = 55.0
+margin_right = 355.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 300, 90 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Stop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_btn" type="Button" parent="hbox"]
+margin_left = 365.0
+margin_right = 665.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 300, 90 )
+size_flags_horizontal = 0
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit_game" parent="." instance=ExtResource( 4 )]
+visible = false
+[connection signal="pressed" from="vbox/center/give_btn" to="." method="_on_give_btn_pressed"]
+[connection signal="pressed" from="hbox/stop_btn" to="." method="_on_stop_btn_pressed"]
+[connection signal="pressed" from="hbox/back_btn" to="." method="_on_back_btn_pressed"]
